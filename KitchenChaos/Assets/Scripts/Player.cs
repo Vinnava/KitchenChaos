@@ -1,7 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public event EventHandler <OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public class OnSelectedCounterChangedEventArgs : EventArgs {
+        public ClearCounter SelectedCounter;
+    }
+    
     [SerializeField] private float moveSpeed = 7.0f;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private LayerMask counterLayerMask;
@@ -11,7 +17,19 @@ public class Player : MonoBehaviour
     private float playerHeight = 2.0f;
 
     private Vector3 lastInteractDir;
-    
+    private ClearCounter selectedCounter;
+
+    private void Start() {
+        gameInput.OnPlayerInteract += OnPlayerInteract;
+    }
+
+    private void OnPlayerInteract(object sender, EventArgs e) {
+        if (selectedCounter != null) {
+            selectedCounter.Interact();
+            Debug.Log(selectedCounter);
+        }
+    }
+
     // Update is called once per frame
     private void Update() {
         HandleMovement();
@@ -81,8 +99,14 @@ public class Player : MonoBehaviour
         float interactDistance = 2.0f;
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit hit, interactDistance, counterLayerMask)) {
             if (hit.transform.TryGetComponent(out ClearCounter clearCounter)) {
-                clearCounter.Interact();
+                if (clearCounter != selectedCounter) {
+                    selectedCounter = clearCounter;
+                }
+            } else {
+                selectedCounter = null;
             }
+        } else {
+            selectedCounter = null;
         }
     }
 }
