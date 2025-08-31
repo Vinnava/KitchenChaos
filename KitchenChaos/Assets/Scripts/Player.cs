@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance {  get; private set; }
+    
     public event EventHandler <OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs {
         public ClearCounter SelectedCounter;
@@ -18,6 +20,13 @@ public class Player : MonoBehaviour
 
     private Vector3 lastInteractDir;
     private ClearCounter selectedCounter;
+
+    private void Awake() {
+        if (Instance != null) {
+            Debug.LogError("Multiple instances of Player");
+        }
+        Instance = this;
+    }
 
     private void Start() {
         gameInput.OnPlayerInteract += OnPlayerInteract;
@@ -100,13 +109,20 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit hit, interactDistance, counterLayerMask)) {
             if (hit.transform.TryGetComponent(out ClearCounter clearCounter)) {
                 if (clearCounter != selectedCounter) {
-                    selectedCounter = clearCounter;
+                    SetSelectedCounter(clearCounter);
                 }
             } else {
-                selectedCounter = null;
+                SetSelectedCounter(null);
             }
         } else {
-            selectedCounter = null;
+            SetSelectedCounter(null);
         }
+    }
+    
+    private void SetSelectedCounter(ClearCounter selectedCounter) {
+        this.selectedCounter = selectedCounter;
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs() {
+            SelectedCounter = selectedCounter
+        });
     }
 }
