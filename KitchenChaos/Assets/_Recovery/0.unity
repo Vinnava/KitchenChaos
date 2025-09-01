@@ -304,17 +304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &231213277 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -4827607578298996520, guid: e7806cbaa15212d468ea3ff42b824368, type: 3}
-  m_PrefabInstance: {fileID: 2645509942091532637}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 746dcd1352606c346a3b175e37cb7e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClearCounter
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,10 +835,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4827607578298996520, guid: e7806cbaa15212d468ea3ff42b824368, type: 3}
-      propertyPath: testing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4827607578298996520, guid: e7806cbaa15212d468ea3ff42b824368, type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 8230520271025560534, guid: 05148beac70963d4891ed9cbf6cf7bf7, type: 3}
@@ -857,10 +842,6 @@ PrefabInstance:
       propertyPath: kitchenObjectSo
       value: 
       objectReference: {fileID: 11400000, guid: 3aa0d5c5b52da54409a68a7ec4c9919b, type: 2}
-    - target: {fileID: -4827607578298996520, guid: e7806cbaa15212d468ea3ff42b824368, type: 3}
-      propertyPath: secondClearCounter
-      value: 
-      objectReference: {fileID: 231213277}
     - target: {fileID: 1552011671842853417, guid: e7806cbaa15212d468ea3ff42b824368, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.98200005
