@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class ClearCounter : BaseCounter, IKitchenObjectParent {
+public class ContainerCounter : BaseCounter, IKitchenObjectParent {
     
     [SerializeField] private KitchenObjectSO kitchenObjectSo;
     [SerializeField] private Transform counterTopPoint;
