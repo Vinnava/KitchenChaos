@@ -111,9 +111,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Test"",
+                    ""name"": ""InteractCounter"",
                     ""type"": ""Button"",
-                    ""id"": ""b95946ff-72ba-4a0f-af29-2fd825934bff"",
+                    ""id"": ""00680aaf-1b89-432e-8bf2-127e79a1141a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -255,19 +255,8 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1c04ea5f-b012-41d1-a6f7-02e963b52893"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""6209eab2-0e1d-4ee3-84ca-a39cec61f5b6"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -288,12 +277,12 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c1ebb8e1-b6e5-4d20-8d42-9aee9078976b"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""id"": ""0df5c3de-32cb-4329-9483-ab7f76b26327"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Test"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""InteractCounter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -367,7 +356,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Test = m_Player.FindAction("Test", throwIfNotFound: true);
+        m_Player_InteractCounter = m_Player.FindAction("InteractCounter", throwIfNotFound: true);
     }
 
     ~@PlayerInputAction()
@@ -450,7 +439,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Test;
+    private readonly InputAction m_Player_InteractCounter;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -471,9 +460,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Test".
+        /// Provides access to the underlying input action "Player/InteractCounter".
         /// </summary>
-        public InputAction @Test => m_Wrapper.m_Player_Test;
+        public InputAction @InteractCounter => m_Wrapper.m_Player_InteractCounter;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -506,9 +495,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Test.started += instance.OnTest;
-            @Test.performed += instance.OnTest;
-            @Test.canceled += instance.OnTest;
+            @InteractCounter.started += instance.OnInteractCounter;
+            @InteractCounter.performed += instance.OnInteractCounter;
+            @InteractCounter.canceled += instance.OnInteractCounter;
         }
 
         /// <summary>
@@ -526,9 +515,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Test.started -= instance.OnTest;
-            @Test.performed -= instance.OnTest;
-            @Test.canceled -= instance.OnTest;
+            @InteractCounter.started -= instance.OnInteractCounter;
+            @InteractCounter.performed -= instance.OnInteractCounter;
+            @InteractCounter.canceled -= instance.OnInteractCounter;
         }
 
         /// <summary>
@@ -649,11 +638,11 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Test" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "InteractCounter" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTest(InputAction.CallbackContext context);
+        void OnInteractCounter(InputAction.CallbackContext context);
     }
 }

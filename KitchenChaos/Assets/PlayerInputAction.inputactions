@@ -25,9 +25,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Test",
+                    "name": "InteractCounter",
                     "type": "Button",
-                    "id": "b95946ff-72ba-4a0f-af29-2fd825934bff",
+                    "id": "00680aaf-1b89-432e-8bf2-127e79a1141a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -169,19 +169,8 @@
                 },
                 {
                     "name": "",
-                    "id": "1c04ea5f-b012-41d1-a6f7-02e963b52893",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6209eab2-0e1d-4ee3-84ca-a39cec61f5b6",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -202,12 +191,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c1ebb8e1-b6e5-4d20-8d42-9aee9078976b",
-                    "path": "<Keyboard>/f",
+                    "id": "0df5c3de-32cb-4329-9483-ab7f76b26327",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Test",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InteractCounter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
