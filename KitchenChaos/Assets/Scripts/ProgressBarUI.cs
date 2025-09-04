@@ -3,25 +3,30 @@ using UnityEngine.UI;
 
 public class ProgressBarUI : MonoBehaviour {
     
-    [SerializeField] private CuttingCounter cuttingCounter;
+    [SerializeField] private GameObject hasProgressGameObject;
     [SerializeField] private Image barImage;
+    
+    private IHasProgress hasProgress;
 
     private void Start() {
         barImage.fillAmount = 0.0f;
+        
+        hasProgress = hasProgressGameObject.GetComponent<IHasProgress>();
 
-        if (cuttingCounter is not null) {
-            cuttingCounter.OnProgressChanged += CuttingCounterOnOnProgressChanged;
-        } else Debug.LogError("[ProgressBarUI] Cutting counter is null.");
+        if (hasProgress is not null) {
+            hasProgress.OnProgressChanged += HasProgress_OnProgress;
+        } else Debug.LogError($"[ProgressBarUI] GameObject : {hasProgressGameObject} has no IHasProgress component!");
         
         Hide();
     }
 
-    private void CuttingCounterOnOnProgressChanged(object sender, CuttingCounter.OnProgressChangedEventArgs e) {
+    private void HasProgress_OnProgress(object sender, IHasProgress.OnProgressChangedEventArgs e) {
         barImage.fillAmount = e.progressNormalized;
+        //Debug.LogWarning($"ProgressNormalized: {e.progressNormalized}");
 
-        if (e.progressNormalized is not 1.0f or 0.0f) {
-            Show();
-        } else Hide();
+        if (e.progressNormalized is 0.0f or 1.0f) {
+            Hide();
+        } else Show();
     }
 
     private void Show() {
