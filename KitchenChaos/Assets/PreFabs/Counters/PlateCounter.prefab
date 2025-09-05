@@ -248,6 +248,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2097265094357162703, guid: 26c596a190e49e840a19f8c9295f211e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097265094357162703, guid: 26c596a190e49e840a19f8c9295f211e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 8321979723584641831, guid: 26c596a190e49e840a19f8c9295f211e, type: 3}
       propertyPath: m_Name
       value: PlateCounter

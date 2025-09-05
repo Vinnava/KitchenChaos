@@ -39,6 +39,16 @@ public class KitchenObject : MonoBehaviour {
         return kitchenObjectParent;
     }
 
+    public bool TryGetPlate(out PlateKitchenObject plateKitchenObject) {
+        if (this is PlateKitchenObject) {
+            plateKitchenObject = (PlateKitchenObject)this;
+            return true;
+        } else {
+            plateKitchenObject = null;
+            return false;
+        }
+    }
+
     public void DestorySelf() {
         kitchenObjectParent.ClearKitchenObject();
         Destroy(gameObject);

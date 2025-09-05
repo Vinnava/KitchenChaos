@@ -14,58 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1756892109
+  lastShownTimestamp: 1757068210
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1756892109
+  checkedLastUpdateTimestamp: 1757068210
   lastQOTDResponse:
-    questionId: 217
-    questionText: 'When would this code cause an error?
-
-      <p>Building closest
-      = null;</p>
-
-      <p>for (int i = 0; i &lt; instanceList.Count; i++) {</p>
-
-      <p>&nbsp;
-      &nbsp; if (Vector3.Distance(position, instanceList[i].GetPosition()) &lt; Vector3.Distance(position,
-      closest.GetPosition())) {</p>
-
-      <p>&nbsp; &nbsp; &nbsp; &nbsp; closest
-      = instanceList[i];</p>
-
-      <p>&nbsp; &nbsp; }</p>
-
-      <p>}</p>
-
-      <p>return
-      closest;</p>'
-    answerA: When instanceList is empty
-    answerB: When instanceList has at least one element
-    answerC: When instanceList has exactly two elements
-    answerD: 
+    questionId: 218
+    questionText: How many classes should your game have?
+    answerA: Less than 100
+    answerB: At least 100
+    answerC: As many as needed and no more
+    answerD: Just one
     answerE: 
-  lastQotdTimestamp: 1756892109
+  lastQotdTimestamp: 1757068210
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleBundleAug25RealisticEnv.png
     topText: AWESOME Realistic Environments 99% OFF!
     topLink: humblebundle
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1756892109
+  lastDynamicHeaderTimestamp: 1757068210
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1756892109
+  websiteLatestMessageTimestamp: 1757068210
   websiteLatestVideos:
     videos:
+    - youTubeId: 9EOhc8Kn1E0
+      title: 'Game Devs, don''t be AFRAID of Hollow Knight: Silksong!'
     - youTubeId: 8Ym28WJUYnQ
       title: The BIGGEST Problem in Game Dev!
     - youTubeId: C66iDut3jTM
       title: BEST NEW Visual Assets to INSPIRE YOU!
     - youTubeId: JZHByNNQb3I
       title: 8 QUICK Success and Marketing Tips you NEED to know!
-    - youTubeId: FrKLJ1nCsxY
-      title: Indie Dev makes $4 MILLION... then goes broke!
-  websiteLatestVideosTimestamp: 1756892109
+  websiteLatestVideosTimestamp: 1757068210

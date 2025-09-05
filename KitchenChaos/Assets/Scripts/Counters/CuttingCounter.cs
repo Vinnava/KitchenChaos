@@ -39,10 +39,15 @@ public class CuttingCounter : BaseCounter, IHasProgress {
         {
             // Has Kitchen object
             if (player.HasKitchenObject()) {
-                // player has no kitchen object 
+                // player has kitchen object 
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO())) {
+                            GetKitchenObject().DestorySelf();
+                    }
+                }
             } else 
             {
-                // player has kitchen object
+                // player has no kitchen object
                 GetKitchenObject().SetKitchenObjectParent(player);
                 cuttingProgress = 0;
                 OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs() {
