@@ -1,6 +1,9 @@
+using System;
 using UnityEngine;
 
 public class KitchenObject : MonoBehaviour {
+    
+    public event EventHandler OnPlateComplete;
 
     [SerializeField] private KitchenObjectSO kitchenObjectSo;
     
