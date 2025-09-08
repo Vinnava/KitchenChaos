@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1757226995
+  lastShownTimestamp: 1757316249
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1757226995
+  checkedLastUpdateTimestamp: 1757316249
   lastQOTDResponse:
     questionId: 219
     questionText: 'Does this variable get reset when you load a different Scene?
@@ -30,18 +30,18 @@ MonoBehaviour:
     answerC: Only when loading the Main Menu
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1757226995
+  lastQotdTimestamp: 1757316249
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleBundleAug25RealisticEnv.png
     topText: AWESOME Realistic Environments 99% OFF!
     topLink: humblebundle
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1757226995
+  lastDynamicHeaderTimestamp: 1757316249
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1757226995
+  websiteLatestMessageTimestamp: 1757316249
   websiteLatestVideos:
     videos:
     - youTubeId: mM8B9YPEC10
@@ -52,4 +52,4 @@ MonoBehaviour:
       title: The BIGGEST Problem in Game Dev!
     - youTubeId: C66iDut3jTM
       title: BEST NEW Visual Assets to INSPIRE YOU!
-  websiteLatestVideosTimestamp: 1757226995
+  websiteLatestVideosTimestamp: 1757316249
