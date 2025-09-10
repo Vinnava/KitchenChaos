@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DeliveryManager : MonoBehaviour {
     
@@ -8,6 +10,10 @@ public class DeliveryManager : MonoBehaviour {
     private List<RecipeSO>  waitingRecipeSOList;
     private float spawnRecipeTimer;
     private const float maxSpawnRecipeTimer = 4.0f;
+
+    private void Awake() {
+        waitingRecipeSOList = new List<RecipeSO>();
+    }
 
     private void Update() {
         spawnRecipeTimer -= Time.deltaTime;
