@@ -10,6 +10,7 @@ public class DeliveryManager : MonoBehaviour {
     private List<RecipeSO>  waitingRecipeSOList;
     private float spawnRecipeTimer;
     private const float maxSpawnRecipeTimer = 4.0f;
+    private int waitingRecipeMax = 4;
 
     private void Awake() {
         waitingRecipeSOList = new List<RecipeSO>();
@@ -20,9 +21,12 @@ public class DeliveryManager : MonoBehaviour {
 
         if (spawnRecipeTimer <= 0) {
             spawnRecipeTimer = maxSpawnRecipeTimer;
-            
-            RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
-            waitingRecipeSOList.Add(waitingRecipeSO);
+
+            if (waitingRecipeSOList.Count < waitingRecipeMax) {
+                RecipeSO waitingRecipeSO = recipeListSO.recipeSOList[Random.Range(0, recipeListSO.recipeSOList.Count)];
+                Debug.Log(waitingRecipeSO.recipeName);
+                waitingRecipeSOList.Add(waitingRecipeSO);
+            }
         }
     }
 }
