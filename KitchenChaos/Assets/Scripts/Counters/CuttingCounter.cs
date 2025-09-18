@@ -64,7 +64,6 @@ public class CuttingCounter : BaseCounter, IHasProgress {
             // Has kitchen Object & It has recipe
             cuttingProgress++;
             OnCut?.Invoke(this, EventArgs.Empty);
-            Debug.Log("Cutting");
             
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOForInput(GetKitchenObject().GetKitchenObjectSO());
             
