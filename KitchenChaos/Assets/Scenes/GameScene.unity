@@ -276,6 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103757756}
   - component: {fileID: 103757755}
+  - component: {fileID: 103757757}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -317,6 +318,18 @@ Transform:
   - {fileID: 4544024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &103757757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103757754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c5bf28f3ca13c4c8932024584906b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSound
 --- !u!4 &120522885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1488604277792938172, guid: 2178038e4c9913947a2758bc104a5182, type: 3}
@@ -1062,6 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c13cf2ac6d776b4a9203f28e2d768d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  audioClipRefSO: {fileID: 11400000, guid: e9c9d2064ec287d4084861179c35d9b6, type: 2}
 --- !u!4 &347471808
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,7 +1121,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7a05dfef8ff133848b3b25408c74021c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
