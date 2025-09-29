@@ -30,16 +30,6 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         }
         Instance = this;
     }
-
-    /*private void Start() {
-        if (gameInput == null) {
-            Debug.LogError("[Player] GameInput is not assigned in Inspector!");
-            return;
-        }
-        
-        gameInput.OnPlayerInteract += OnPlayerInteract;
-        gameInput.OnPlayerInteractCounter += OnPlayerInteractCounter;
-    }*/
     
     private void OnEnable() {
         if (gameInput != null) {
@@ -56,12 +46,16 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     private void OnPlayerInteractCounter(object sender, EventArgs e) {
+        if(!KitchenGameManager.Instance.IsGamePlaying()) return;
+        
         if (selectedCounter != null) {
             selectedCounter.InteractCounter(this);
         } else Debug.LogWarning("[Player] Interact failed: selectedCounter is null.");
     }
 
     private void OnPlayerInteract(object sender, EventArgs e) {
+        if(!KitchenGameManager.Instance.IsGamePlaying()) return;
+
         if (selectedCounter != null) {
             selectedCounter.Interact(this);
         }
