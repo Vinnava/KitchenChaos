@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour {
 
     private void Start() {
         DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
-        DeliveryManager.Instance.OnRecipeFalied += DeliveryManager_OnRecipeFailed;
+        DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;
         
         BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
         CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;
