@@ -16,11 +16,13 @@ public class KitchenGameManager : MonoBehaviour {
 
     private State state;
     private float waitingToStartTimer = 1.0f;
-    private float CountDownToStartTimer = 3.0f;
+    private float CountdownToStartTimer = 3.0f;
     private float GamePlayingTimer = 10.0f;
 
     private void Awake() {
         state = State.WaitingToStart;
+        
+        Instance = this;
     }
 
     private void Update() {
@@ -33,8 +35,8 @@ public class KitchenGameManager : MonoBehaviour {
                 }
                 break;
             case State.CountDownToStart:
-                CountDownToStartTimer -= Time.deltaTime;
-                if (CountDownToStartTimer < 0.0f) {
+                CountdownToStartTimer -= Time.deltaTime;
+                if (CountdownToStartTimer < 0.0f) {
                     state = State.GamePlaying;
                     OnStateChanged?.Invoke(this, EventArgs.Empty);
                 }
@@ -58,5 +60,9 @@ public class KitchenGameManager : MonoBehaviour {
     
     public bool IsCountdownToStartActive() {
         return state == State.CountDownToStart;
+    }
+    
+    public float GetCountdownToStartTimer() {
+        return CountdownToStartTimer;
     }
 }
