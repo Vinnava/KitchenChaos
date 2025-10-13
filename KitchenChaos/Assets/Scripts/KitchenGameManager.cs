@@ -20,11 +20,21 @@ public class KitchenGameManager : MonoBehaviour {
     private float countdownToStartTimer = 3.0f;
     private float gamePlayingTimer;
     private float GamePlayingTimerMax = 10.0f;
-
+    
+    private bool bIsGamePause = false;
+    
     private void Awake() {
         state = State.WaitingToStart;
         
         Instance = this;
+    }
+
+    private void OnEnable() {
+        GameInput.Instance.OnPlayerPause += GameInput_OnPlayerPause;
+    }
+
+    private void GameInput_OnPlayerPause(object sender, EventArgs e) {
+        TogglePauseGame();
     }
 
     private void Update() {
@@ -75,5 +85,15 @@ public class KitchenGameManager : MonoBehaviour {
     
     public float GetGamePlayingTimerNormalized() {
         return 1 - (gamePlayingTimer / GamePlayingTimerMax);
+    }
+    
+    private void TogglePauseGame() {
+        bIsGamePause = !bIsGamePause;
+        if (bIsGamePause) {
+            Time.timeScale = 0.0f;
+        } else {
+            Time.timeScale = 1.0f;
+        }
+        
     }
 }
